@@ -20,33 +20,54 @@ var specialInput = true;
 var numericInput = true; 
 var lowercaseInput = true; 
 var uppercaseInput = true; 
+var passwordLengthString;
+var passwordLengthNumber = 0;
+
+var specialArray = []
 
 
 	function generatePassword() { 
-			var passwordLengthString = prompt("Set your password length. The length needs to be 8 or more charaters.");
-			var passwordLengthNumber = parseInt(passwordLengthString);
+			passwordLengthString = prompt("Set your password length. The length needs to be 8 or more charaters.");
+			passwordLengthNumber = parseInt(passwordLengthString);
+			checkPasswordLength();
 			
-			if (passwordLengthNumber >= 8) {
-				getUsersCharacters();
-				} else if (passwordLengthNumber < 8) {
-					passwordLengthString = prompt("That was not more than 8 characters. Please have 8 or more characters.");
-					
-			} else {
-				passwordLengthString = prompt("Please set your password length. The length needs to be 8 or more charaters.");
-					
-			}
 		}
 		
-	
+	function checkPasswordLength() {
+		if (passwordLengthNumber >= 8 && passwordLengthNumber < 129) {
+			getUsersCharacters();
+			return console.log(passwordLengthNumber);
+			
+			} else if (passwordLengthNumber < 8) {
+				passwordLengthString = prompt("That was not more than 8 characters. Please have 8 or more characters.");
+				passwordLengthNumber = parseInt(passwordLengthString);
+				return checkPasswordLength();
+		
+			} else if (passwordLengthNumber > 129) {
+				passwordLengthString = prompt("That was more than 128 characters. Please have 8 to 128 characters.");
+				passwordLengthNumber = parseInt(passwordLengthString);
+				return checkPasswordLength();
+			}
+		
+			else {
+				passwordLengthString = prompt("Please set your password length. The length needs to be 8 or more charaters.");
+				passwordLengthNumber = parseInt(passwordLengthString);
+				return checkPasswordLength();
+			}
+	}
+
 	function getUsersCharacters() {
 		specialInput = confirm("Would you like special characters?"); 
 			console.log(specialInput);
 		numericInput = confirm("Would you like numeric characters?"); 
-		console.log(numericInput);
+			console.log(numericInput);
 		lowercaseInput = confirm("Would you like to include lowercase characters?"); 
-		console.log(lowercaseInput);
+			console.log(lowercaseInput);
 		uppercaseInput = confirm("Would you like to include uppcase characters?"); 
-		console.log(uppercaseInput);
+			console.log(uppercaseInput);
+
+
+
 	}
 
 
