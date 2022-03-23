@@ -27,6 +27,7 @@ var specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 var numericArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var lowercaseArray = "abcdefghijklmnopqrstuvwxyz".split("");
 var uppercaseArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var finalArray = [];
 var finalPassword = [];
 
 
@@ -35,7 +36,7 @@ var finalPassword = [];
 			passwordLengthNumber = parseInt(passwordLengthString);
 			checkPasswordLength();
 			getUsersCharacters();
-			randomizer();
+			// randomizer();
 			
 		}
 		
@@ -67,8 +68,20 @@ var finalPassword = [];
 			console.log(lowercaseInput);
 		uppercaseInput = confirm("Would you like to include uppcase characters?"); 
 			console.log(uppercaseInput);
-		return console.log(specialArray);
+		
+			if (specialInput && numericInput && lowercaseInput && uppercaseInput) {
+				finalArray = specialArray.concat(specialArray, numericArray, lowercaseArray, uppercaseArray);
+				return console.log(finalArray);
+			} else {
+				return console.log("Didn't Work");
+			}
+			
+	
+
 	}
+
+
+		
 
 	function randomizer() {
 		
