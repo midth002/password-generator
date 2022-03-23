@@ -15,38 +15,38 @@ generateBtn.addEventListener("click", writePassword);
 
 // 1. Create a variable to save user input from propmpts
 
-var specialCharacters = true; 
-var numericCharacters = true; 
-var lowercaseCharacters = true; 
-var uppercaseCharacters = true; 
+
+var specialInput = true; 
+var numericInput = true; 
+var lowercaseInput = true; 
+var uppercaseInput = true; 
+
 
 	function generatePassword() { 
-		 
 			var passwordLengthString = prompt("Set your password length. The length needs to be 8 or more charaters.");
 			var passwordLengthNumber = parseInt(passwordLengthString);
-			if (passwordLengthNumber >= 8) {
-			getUsersCharacters();
-			} else if (passwordLengthNumber < 8) {
-				passwordLengthString = prompt("That was not more than 8 characters. Please have 8 or more characters.");
-				checkPasswordLength();
-			} else {
-				passwordLengthString = prompt("That was not a numeric value. Please have 8 or more characters.");
-				checkPasswordLength();
-		}
-
 			
-	}
-
-
+			if (passwordLengthNumber >= 8) {
+				getUsersCharacters();
+				} else if (passwordLengthNumber < 8) {
+					passwordLengthString = prompt("That was not more than 8 characters. Please have 8 or more characters.");
+					
+			} else {
+				passwordLengthString = prompt("Please set your password length. The length needs to be 8 or more charaters.");
+					
+			}
+		}
+		
+	
 	function getUsersCharacters() {
-		specialCharacters = confirm("Would you like special characters?"); 
-		console.log(specialCharacters );
-		numericCharacters = confirm("Would you like numeric characters?"); 
-		console.log(numericCharacters);
-		lowercaseCharacters = confirm("Would you like to include lowercase characters?"); 
-		console.log(lowercaseCharacters);
-		uppercaseCharacters = confirm("Would you like to include uppcase characters?"); 
-		console.log(uppercaseCharacters);
+		specialInput = confirm("Would you like special characters?"); 
+			console.log(specialInput);
+		numericInput = confirm("Would you like numeric characters?"); 
+		console.log(numericInput);
+		lowercaseInput = confirm("Would you like to include lowercase characters?"); 
+		console.log(lowercaseInput);
+		uppercaseInput = confirm("Would you like to include uppcase characters?"); 
+		console.log(uppercaseInput);
 	}
 
 
