@@ -20,13 +20,10 @@ var passwordLengthString = prompt("Set your password length. The length needs to
 //var lowercaseCharacters = confirm("Would you like to include lowercase characters?"); 
 //var uppercaseCharacters = confirm("Would you like to include uppcase characters?"); 
 
-	
-	
-
 	function checkPasswordLength() { 
 		var passwordLengthNumber = parseInt(passwordLengthString);
 		if (passwordLengthNumber >= 8) {
-			var specialCharacters = confirm("Would you like special characters?");
+			specialCharacters();
 		} else if (passwordLengthNumber < 8) {
 			passwordLengthString = prompt("That was not more than 8 characters. Please have 8 or more characters.");
 			checkPasswordLength();
@@ -34,6 +31,26 @@ var passwordLengthString = prompt("Set your password length. The length needs to
 			passwordLengthString = prompt("That was not a numeric value. Please have 8 or more characters.");
 			checkPasswordLength();
 	}
+	}
+
+	function specialCharacters() {
+		var sp = confirm("Would you like special characters?"); 
+		console.log(sp);
+	}
+
+	function numericCharacters() {
+		var nc = confirm("Would you like numeric characters?"); 
+		console.log(nc);
+	}
+
+	function lowercaseCharacters() {
+		var lc = confirm("Would you like to include lowercase characters?"); 
+		console.log(lc);
+	}
+
+	function uppercaseCharacters() {
+		var uc = confirm("Would you like to include uppcase characters?"); 
+		console.log(uc);
 	}
 
 	checkPasswordLength();
