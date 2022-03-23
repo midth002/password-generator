@@ -14,9 +14,8 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // 1. Create a variable to save user input from propmpts
-var userInput = prompt("Hello");
-var passwordLength = "0";
-var specialCharacters = true; 
+var passwordLength = prompt("Set your password length. The length needs to be 8 or more charaters.");
+var specialCharacters = confirm("Would you like special characters?"); 
 var numericCharacters = true; 
 var lowercaseCharacters = true; 
 var uppercaseCharacters = true; 
