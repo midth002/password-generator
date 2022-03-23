@@ -71,8 +71,13 @@ var finalPassword = [];
 	}
 
 	function randomizer() {
-		var specialRandom = specialArray[Math.floor(Math.random() * specialArray.length)];
-		return console.log(specialRandom);
+		
+		for (i = 0; i < passwordLengthNumber; i++) {
+			var specialRandom = specialArray[Math.floor(Math.random() * specialArray.length)];
+			console.log(specialRandom);
+			
+		}	console.log(passwordLengthNumber);
+		
 	}
 
 	// passwordLength (string) string into integer
