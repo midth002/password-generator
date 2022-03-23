@@ -28,7 +28,8 @@ var numericArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var lowercaseArray = "abcdefghijklmnopqrstuvwxyz".split("");
 var uppercaseArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var finalArray = [];
-var finalPassword = [];
+var finalPassword = "";
+
 
 
 	function generatePassword() { 
@@ -61,23 +62,26 @@ var finalPassword = [];
 
 	function getUsersCharacters() {
 		specialInput = confirm("Would you like special characters?"); 
-			console.log(specialInput);
+		if (specialInput) {
+			finalArray.unshift(specialArray);
+		}
 		numericInput = confirm("Would you like numeric characters?"); 
-			console.log(numericInput);
-		lowercaseInput = confirm("Would you like to include lowercase characters?"); 
-			console.log(lowercaseInput);
-		uppercaseInput = confirm("Would you like to include uppcase characters?"); 
-			console.log(uppercaseInput);
+		if (numericInput) {
+			finalArray.unshift(numericArray);
+		} 
 		
-			if (specialInput && numericInput && lowercaseInput && uppercaseInput) {
-				finalArray = specialArray.concat(specialArray, numericArray, lowercaseArray, uppercaseArray);
-				return console.log(finalArray);
-			} else {
-				return console.log("Didn't Work");
-			}
+		lowercaseInput = confirm("Would you like to include lowercase characters?"); 
+		if (lowercaseInput) {
+			finalArray.unshift(lowercaseArray);
+		}
 			
-	
+		uppercaseInput = confirm("Would you like to include uppcase characters?"); 
+		if (uppercaseInput) {
+			finalArray.unshift(uppercaseArray);
+		}
 
+		
+		console.log(finalArray);
 	}
 
 
@@ -87,7 +91,7 @@ var finalPassword = [];
 		
 		for (i = 0; i < passwordLengthNumber; i++) {
 			var specialRandom = specialArray[Math.floor(Math.random() * specialArray.length)];
-			console.log(specialRandom);
+			
 			
 		}	console.log(passwordLengthNumber);
 		
