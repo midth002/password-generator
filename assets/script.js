@@ -24,9 +24,10 @@ var passwordLengthString;
 var passwordLengthNumber = 0;
 
 var specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
-var numericArray = [];
-var lowercaseArray = [];
-var upercaseArray = [];
+var numericArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var lowercaseArray = "abcdefghijklmnopqrstuvwxyz".split("");
+var uppercaseArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var finalPassword = [];
 
 
 	function generatePassword() { 
@@ -34,6 +35,7 @@ var upercaseArray = [];
 			passwordLengthNumber = parseInt(passwordLengthString);
 			checkPasswordLength();
 			getUsersCharacters();
+			randomizer();
 			
 		}
 		
@@ -58,11 +60,7 @@ var upercaseArray = [];
 
 	function getUsersCharacters() {
 		specialInput = confirm("Would you like special characters?"); 
-		if (specialInput) {
-			specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
-		} else {
-			specialArray = [];
-		}
+			console.log(specialInput);
 		numericInput = confirm("Would you like numeric characters?"); 
 			console.log(numericInput);
 		lowercaseInput = confirm("Would you like to include lowercase characters?"); 
@@ -72,8 +70,10 @@ var upercaseArray = [];
 		return console.log(specialArray);
 	}
 
-
-
+	function randomizer() {
+		var specialRandom = specialArray[Math.floor(Math.random() * specialArray.length)];
+		return console.log(specialRandom);
+	}
 
 	// passwordLength (string) string into integer
 	// specialCharacters boolean 
