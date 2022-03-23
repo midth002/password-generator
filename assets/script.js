@@ -15,46 +15,38 @@ generateBtn.addEventListener("click", writePassword);
 
 // 1. Create a variable to save user input from propmpts
 
-//var specialCharacters = confirm("Would you like special characters?"); 
-//var numericCharacters = confirm("Would you like numeric characters?"); 
-//var lowercaseCharacters = confirm("Would you like to include lowercase characters?"); 
-//var uppercaseCharacters = confirm("Would you like to include uppcase characters?"); 
+var specialCharacters = true; 
+var numericCharacters = true; 
+var lowercaseCharacters = true; 
+var uppercaseCharacters = true; 
 
 	function generatePassword() { 
-		var passwordLengthString = prompt("Set your password length. The length needs to be 8 or more charaters.");
-		var passwordLengthNumber = parseInt(passwordLengthString);
-		if (passwordLengthNumber >= 8) {
-			specialCharacters();
-			numericCharacters();
-			lowercaseCharacters();
-			uppercaseCharacters();
-		} else if (passwordLengthNumber < 8) {
-			passwordLengthString = prompt("That was not more than 8 characters. Please have 8 or more characters.");
-			checkPasswordLength();
-		} else {
-			passwordLengthString = prompt("That was not a numeric value. Please have 8 or more characters.");
-			checkPasswordLength();
-	}
+		 
+			var passwordLengthString = prompt("Set your password length. The length needs to be 8 or more charaters.");
+			var passwordLengthNumber = parseInt(passwordLengthString);
+			if (passwordLengthNumber >= 8) {
+			getUsersCharacters();
+			} else if (passwordLengthNumber < 8) {
+				passwordLengthString = prompt("That was not more than 8 characters. Please have 8 or more characters.");
+				checkPasswordLength();
+			} else {
+				passwordLengthString = prompt("That was not a numeric value. Please have 8 or more characters.");
+				checkPasswordLength();
+		}
+
+			
 	}
 
-	function specialCharacters() {
-		var sp = confirm("Would you like special characters?"); 
-		console.log(sp);
-	}
 
-	function numericCharacters() {
-		var nc = confirm("Would you like numeric characters?"); 
-		console.log(nc);
-	}
-
-	function lowercaseCharacters() {
-		var lc = confirm("Would you like to include lowercase characters?"); 
-		console.log(lc);
-	}
-
-	function uppercaseCharacters() {
-		var uc = confirm("Would you like to include uppcase characters?"); 
-		console.log(uc);
+	function getUsersCharacters() {
+		specialCharacters = confirm("Would you like special characters?"); 
+		console.log(specialCharacters );
+		numericCharacters = confirm("Would you like numeric characters?"); 
+		console.log(numericCharacters);
+		lowercaseCharacters = confirm("Would you like to include lowercase characters?"); 
+		console.log(lowercaseCharacters);
+		uppercaseCharacters = confirm("Would you like to include uppcase characters?"); 
+		console.log(uppercaseCharacters);
 	}
 
 
