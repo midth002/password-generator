@@ -23,7 +23,10 @@ var uppercaseInput = true;
 var passwordLengthString;
 var passwordLengthNumber = 0;
 
-var specialArray = []
+var specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+var numericArray = [];
+var lowercaseArray = [];
+var upercaseArray = [];
 
 
 	function generatePassword() { 
@@ -55,19 +58,19 @@ var specialArray = []
 
 	function getUsersCharacters() {
 		specialInput = confirm("Would you like special characters?"); 
-			console.log(specialInput);
+		if (specialInput) {
+			specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+		} else {
+			specialArray = [];
+		}
 		numericInput = confirm("Would you like numeric characters?"); 
 			console.log(numericInput);
 		lowercaseInput = confirm("Would you like to include lowercase characters?"); 
 			console.log(lowercaseInput);
 		uppercaseInput = confirm("Would you like to include uppcase characters?"); 
 			console.log(uppercaseInput);
-
-
-
+		return console.log(specialArray);
 	}
-
-
 
 
 
