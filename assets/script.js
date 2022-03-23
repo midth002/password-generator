@@ -30,29 +30,26 @@ var specialArray = []
 			passwordLengthString = prompt("Set your password length. The length needs to be 8 or more charaters.");
 			passwordLengthNumber = parseInt(passwordLengthString);
 			checkPasswordLength();
+			getUsersCharacters();
 			
 		}
 		
 	function checkPasswordLength() {
-		if (passwordLengthNumber >= 8 && passwordLengthNumber < 129) {
-			getUsersCharacters();
+		if (passwordLengthNumber >= 8 && passwordLengthNumber <= 128) {
 			return console.log(passwordLengthNumber);
 			
 			} else if (passwordLengthNumber < 8) {
-				passwordLengthString = prompt("That was not more than 8 characters. Please have 8 or more characters.");
-				passwordLengthNumber = parseInt(passwordLengthString);
-				return checkPasswordLength();
+				alert("That was not more than 8 characters. Please have 8 or more characters.");
+				return generatePassword();
 		
-			} else if (passwordLengthNumber > 129) {
-				passwordLengthString = prompt("That was more than 128 characters. Please have 8 to 128 characters.");
-				passwordLengthNumber = parseInt(passwordLengthString);
-				return checkPasswordLength();
+			} else if (passwordLengthNumber > 128) {
+				alert("That was more than 128 characters. Please have 8 to 128 characters.");
+				return generatePassword();
 			}
 		
 			else {
-				passwordLengthString = prompt("Please set your password length. The length needs to be 8 or more charaters.");
-				passwordLengthNumber = parseInt(passwordLengthString);
-				return checkPasswordLength();
+				alert("Please set your password length. The length needs to be 8 or more charaters.");
+				return generatePassword();
 			}
 	}
 
