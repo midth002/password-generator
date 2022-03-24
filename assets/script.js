@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var password;
+var password = "";
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -28,17 +28,19 @@ var numericArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var lowercaseArray = "abcdefghijklmnopqrstuvwxyz".split("");
 var uppercaseArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var finalArray = [];
-var finalPassword = "";
+
 
 
 
 	function generatePassword() { 
+			password = ""; 
 			passwordLengthString = prompt("Set your password length. The length needs to be 8 or more charaters.");
 			passwordLengthNumber = parseInt(passwordLengthString);
 			checkPasswordLength();
 			getUsersCharacters();
 			randomizer();
-			
+			return password;
+
 		}
 		
 	function checkPasswordLength() {
@@ -95,12 +97,13 @@ var finalPassword = "";
 			var specialRandom = finalArray[Math.floor(Math.random() * finalArray.length)];
 			console.log(typeof specialRandom);
 
-			finalPassword = finalPassword.concat(specialRandom);
-		}	console.log(finalPassword);
+			password = password.concat(specialRandom);
+		}	console.log(password);
 	}
 
+	
 
-	password = finalPassword;
+	
 
 	// passwordLength (string) string into integer
 	// specialCharacters boolean 
