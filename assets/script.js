@@ -37,7 +37,7 @@ var finalPassword = "";
 			passwordLengthNumber = parseInt(passwordLengthString);
 			checkPasswordLength();
 			getUsersCharacters();
-			// randomizer();
+			randomizer();
 			
 		}
 		
@@ -63,25 +63,27 @@ var finalPassword = "";
 	function getUsersCharacters() {
 		specialInput = confirm("Would you like special characters?"); 
 		if (specialInput) {
-			finalArray.unshift(specialArray);
+			// finalArray.unshift(specialArray);
+			finalArray = finalArray.concat(specialArray);
 		}
 		numericInput = confirm("Would you like numeric characters?"); 
 		if (numericInput) {
-			finalArray.unshift(numericArray);
+			finalArray = finalArray.concat(numericArray);
 		} 
 		
 		lowercaseInput = confirm("Would you like to include lowercase characters?"); 
 		if (lowercaseInput) {
-			finalArray.unshift(lowercaseArray);
+			finalArray = finalArray.concat(lowercaseArray);
 		}
 			
 		uppercaseInput = confirm("Would you like to include uppcase characters?"); 
 		if (uppercaseInput) {
-			finalArray.unshift(uppercaseArray);
+			finalArray = finalArray.concat(uppercaseArray);
 		}
 
-		
 		console.log(finalArray);
+
+
 	}
 
 
@@ -90,10 +92,12 @@ var finalPassword = "";
 	function randomizer() {
 		
 		for (i = 0; i < passwordLengthNumber; i++) {
-			var specialRandom = specialArray[Math.floor(Math.random() * specialArray.length)];
+			var specialRandom = finalArray[Math.floor(Math.random() * finalArray.length)];
+			console.log(specialRandom);
 			
 			
 		}	console.log(passwordLengthNumber);
+			
 		
 	}
 
