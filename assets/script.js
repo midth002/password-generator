@@ -37,8 +37,8 @@ var finalArray;
 	// Once user clicks on the generate password button, this function starts checking what the user wants in their password.
 	function generatePassword() { 
 			
-		finalArray = [];
-			finalPassword = ""; 
+			finalArray = [];
+			password = ""; 
 			// passwordLength (string) string into integer
 			passwordLengthString = prompt("Set your password length. The length needs to be 8 or more charaters.");
 			passwordLengthNumber = parseInt(passwordLengthString);
@@ -47,7 +47,7 @@ var finalArray;
 			randomizer();
 
 			//convert the function into a string and show the password to the user
-			return finalPassword;
+			return password;
 		}
 		
 	// Checking if the password is between 8 to 128 from the users input. 
