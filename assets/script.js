@@ -83,9 +83,11 @@ var finalArray = [];
 			finalArray = finalArray.concat(uppercaseArray);
 		}
 
-		console.log(finalArray);
-
-
+		if (!specialInput && !numericInput && !lowercaseInput && !uppercaseInput)
+			{
+				 alert("You must select at least one of the characters should be selected for your password.");
+				 getUsersCharacters();
+			}
 	}
 
 
