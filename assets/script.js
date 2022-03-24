@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var password;
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -93,13 +93,14 @@ var finalPassword = "";
 		
 		for (i = 0; i < passwordLengthNumber; i++) {
 			var specialRandom = finalArray[Math.floor(Math.random() * finalArray.length)];
-			console.log(specialRandom);
-			
-			
-		}	console.log(passwordLengthNumber);
-			
-		
+			console.log(typeof specialRandom);
+
+			finalPassword = finalPassword.concat(specialRandom);
+		}	console.log(finalPassword);
 	}
+
+
+	password = finalPassword;
 
 	// passwordLength (string) string into integer
 	// specialCharacters boolean 
