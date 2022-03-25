@@ -53,7 +53,7 @@ var finalArray;
 	// Checking if the password is between 8 to 128 from the users input. 
 	function checkPasswordLength() {
 		if (passwordLengthNumber >= 8 && passwordLengthNumber <= 128) {
-			return console.log(passwordLengthNumber);
+			return passwordLengthNumber;
 			
 			} else if (passwordLengthNumber < 8) {
 				alert("That was not more than 8 characters. Please have 8 or more characters.");
@@ -103,6 +103,7 @@ var finalArray;
 				 alert("You must select at least one of the characters should be selected for your password.");
 				 getUsersCharacters();
 			}
+		console.log(finalArray);
 	}
 
 
@@ -112,15 +113,8 @@ var finalArray;
 	function randomizer() {
 		
 		for (i = 0; i < passwordLengthNumber; i++) {
-			var specialRandom = finalArray[Math.floor(Math.random() * finalArray.length)];
-			console.log(typeof specialRandom);
-
-			password = password.concat(specialRandom);
-		}	console.log(password);
+		var random = finalArray[Math.floor(Math.random() * finalArray.length)];
+		password = password.concat(random);	
+			}
+			
 	}
-
-	
-
-
-
-// 6. convert the function into a string and show the password to the user
